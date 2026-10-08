@@ -2,7 +2,9 @@
 # ~/.bashrc
 #
 
-export PATH="~/bin:$PATH"
+export PATH="~/bin:~/.cargo/bin:$PATH"
+export TERMINAL=kitty
+export EDITOR=vim
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -125,20 +127,14 @@ export PROMPT_COMMAND=(set_prompt)
 # setup zoxide last
 eval "$(zoxide init bash)"
 
-# set the EDITOR
-export EDITOR=vim
-
 # function to change current working directory with yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && { z && z -- "$cwd" || builtin cd -- "$cwd"; }
 	rm -f -- "$tmp"
 }
 
 # if can, run fastfetch
 which fastfetch &> /dev/null && fastfetch
-
-# setup dotfiles git bare repo alias
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'

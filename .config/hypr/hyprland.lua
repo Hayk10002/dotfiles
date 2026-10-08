@@ -1,0 +1,7 @@
+require("hyconf10002.monitors")
+require("hyconf10002.autostart")
+require("hyconf10002.style")
+require("hyconf10002.layouts")
+require("hyconf10002.rules")
+require("hyconf10002.inputs")
+require("hyconf10002.binds")

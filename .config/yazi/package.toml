@@ -1,7 +1,12 @@
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "2161735"
-hash = "901741afba1979739b4650324265162e"
+rev = "0e08704"
+hash = "e4d7c06510b4fe5f64ae31fbb4e017d6"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "406ce6c"
+hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [flavor]
 deps = []

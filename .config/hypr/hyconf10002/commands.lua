@@ -9,6 +9,10 @@ TaskManager = OpenInTerminal .. "htop"
 
 LockSession = "loginctl lock-session"
 LogOff = "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"
+Sleep = "systemctl suspend"
+Hibernate = "systemctl hibernate"
+Shutdown = "hyprshutdown -p 'systemctl poweroff'"
+Reboot = "hyprshutdown -p 'systemctl reboot'"
 ToggleWaybar = "killall -SIGUSR1 waybar"
 ReloadWaybar = "systemctl --user reload waybar || systemctl --user enable waybar --now"
 

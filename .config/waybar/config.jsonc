@@ -186,12 +186,12 @@
         "menu": "on-click",
         "menu-file": "~/.config/waybar/gtk-menus/power-menu.xml",
         "menu-actions": {
-            "lock": "loginctl lock-session",
-            "logoff": "hyprctl dispatch \"hl.dsp.exec_cmd(\\\"hyprshutdown\\\")\"",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate",
-            "shutdown": "hyprctl dispatch \"hl.dsp.exec_cmd(\\\"hyprshutdown -p 'systemctl poweroff'\\\")\"",
-            "reboot": "hyprctl dispatch \"hl.dsp.exec_cmd(\\\"hyprshutdown -t 'Restarting...' -p 'systemctl reboot'\\\")\""
+            "lock": "hyprctl dispatch 'hl.dsp.exec_cmd(LockSession)'",
+            "logoff": "hyprctl dispatch 'hl.dsp.exec_cmd(LogOff)'",
+            "suspend": "hyprctl dispatch 'hl.dsp.exec_cmd(Sleep)'",
+            "hibernate": "hyprctl dispatch 'hl.dsp.exec_cmd(Hibernate)'",
+            "shutdown": "hyprctl dispatch 'hl.dsp.exec_cmd(Shutdown)'",
+            "reboot": "hyprctl dispatch 'hl.dsp.exec_cmd(Reboot)'"
         },
     }
 }

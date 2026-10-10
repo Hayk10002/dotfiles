@@ -9,11 +9,6 @@ export EDITOR=vim
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# If can, start uwsm
-if uwsm check may-start && uwsm select; then
-	exec uwsm start default
-fi
-
 shopt -s checkwinsize
 
 if [ -f ~/.bash_aliases ]; then
@@ -27,7 +22,7 @@ HISTFILESIZE=10000
 eval "$(fzf --bash)"
 
 # Setup thefuck
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 # setup a timer to show how long the last command took
 function timer_now {
